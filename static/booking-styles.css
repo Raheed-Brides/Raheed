@@ -1,0 +1,257 @@
+/* section-2 general fix */
+.section-2 {
+  display: flex;
+  flex-direction: column; /* العناصر تبقى تحت بعض */
+  align-items: center;    /* يوسّط أفقياً */
+  justify-content: center; /* يوسّط عمودياً */
+  text-align: center; 
+  min-height: 100vh; /* يخلي السكشن ياخد طول الشاشة */
+  padding: 40px 20px;
+}
+
+
+/* New Collection spacing */
+.new-collection {
+  margin-bottom: auto; 
+  /* يخلي مسافة واضحة قبل الـ form */
+}
+.new-collection {
+  margin-bottom: 50px;
+  text-align: center; /* العنوان في النص */
+}
+
+.collection-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* صف فيه 2 كروت */
+  gap: 30px; /* المسافة بين الكروت */
+  justify-content: center; /* يوسّطهم أفقياً */
+  max-width: 900px; /* عرض مناسب للسكشن */
+  margin: 0 auto; /* يوسّط الحاوية */
+}
+
+.collection-card {
+  text-align: center;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.collection-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.collection-card:hover {
+  transform: translateY(-5px);
+}
+.hero-text {
+  text-align: center;       /* يخلي النص والعناصر في النص */
+  display: flex;
+  flex-direction: column;   /* العناصر تحت بعض */
+  align-items: center;      /* يوسّط أفقياً */
+  justify-content: center;  /* يوسّط عمودياً */
+  gap: 20px;                /* مسافة بين العنوان والزر */
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  color: rgb(28, 26, 26);
+  margin-bottom: 20px; /* مسافة إضافية تحت العنوان */
+}
+
+/* موبايل: يخليها كارت واحد في الصف */
+@media (max-width: 768px) {
+  .collection-container {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+  }
+}
+
+
+/* Book Now Button Styles */
+.book-now-btn {
+  display: inline-block;
+  background-color: #8B4513;
+  color: white;
+  padding: 15px 40px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 50px;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.book-now-btn:hover {
+  background-color: #A0522D;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Booking Form Styles */
+.booking-section {
+  background-color: #f9f9f9;
+  padding: 60px 20px;
+  margin-top: 40px;
+  text-align: center;
+  width: 100%; /* مهم عشان يمتد بعرض الصفحة */
+  display: block;
+}
+
+.booking-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #333;
+  font-family: 'Great Vibes', cursive;
+}
+
+.booking-form {
+  max-width: 500px;
+  margin: 0 auto;
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 25px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #555;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+/* Ensure both text and tel inputs have identical sizing */
+input[type="text"],
+input[type="tel"] {
+  height: 48px;
+  font-family: inherit;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+/* Ensure both text and tel inputs have identical sizing */
+input[type="text"],
+input[type="tel"] {
+  height: 48px;
+  font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #8B4513;
+}
+
+.submit-btn {
+  background-color: #8B4513;
+  color: white;
+  padding: 15px 40px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.submit-btn:hover {
+  background-color: #A0522D;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Response message styles */
+.alert {
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-top: 15px;
+  font-weight: 500;
+}
+
+.alert-success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.alert-danger {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.alert-info {
+  background-color: #d1ecf1;
+  color: #0c5460;
+  border: 1px solid #bee5eb;
+}
+
+/* Phone validation message styles */
+.phone-validation-success {
+  color: #155724;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 0.9em;
+  margin-top: 5px;
+}
+
+.phone-validation-error {
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 0.9em;
+  margin-top: 5px;
+}
+
+/* Loading animation */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.bi-arrow-repeat {
+  animation: spin 1s linear infinite;
+  margin-right: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .booking-form {
+    padding: 30px 20px;
+    margin: 0 10px;
+  }
+  
+  .booking-section h2 {
+    font-size: 2rem;
+  }
+}
