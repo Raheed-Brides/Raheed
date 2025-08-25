@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Raheed Brides</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
+  <link rel="stylesheet" href="{{ url_for('static', filename='booking-styles.css') }}"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" rel="stylesheet">
+   <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WVD39N29');</script>
+<!-- End Google Tag Manager -->
+  
+ <link rel="icon" type="image/png" href="images/Logo-01.png">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+ <script type='text/javascript'>
+(function(e,t,n){if(e.snaptr)return;var a=e.snaptr=function()
+{a.handleRequest?a.handleRequest.apply(a,arguments):a.queue.push(arguments)};
+a.queue=[];var s='script';r=t.createElement(s);r.async=!0;
+r.src=n;var u=t.getElementsByTagName(s)[0];
+u.parentNode.insertBefore(r,u);})(window,document,
+'https://sc-static.net/scevent.min.js');
+
+snaptr('init', '99494df7-6cff-43fa-b930-92ee491eef00', {
+  'user_email': '_INSERT_USER_EMAIL_'
+});
+
+// أول ما يفتح الصفحة
+snaptr('track', 'PAGE_VIEW');
+
+// عند الضغط على زرار Booking
+document.addEventListener("DOMContentLoaded", function() {
+  document.getElementById("submitBtn").addEventListener("click", function() {
+    snaptr('track', 'PURCHASE');
+    console.log("Snapchat PURCHASE event sent ✅");
+  });
+});
+</script>
+
+
+  
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3CSKWJL9GD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3CSKWJL9GD');
+</script>
+
+<!-- Meta Pixel Code -->
+
+
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1440684406952168');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1440684406952168&ev=PageView&noscript=1"
+/></noscript>
+
+
+
+</head>
+<body>
+  <section class="hero">
+   <div class="overlay">
+  <div class="hero-logo">
+    <img src="{{ url_for('static', filename='Logo-01.png') }}" alt="Logo">
+  </div>
+  <div class="hero-text">
+    <h1>Your Moment ,Your Dress <br>& Your Story</h1>
+    <a href="#booking-form" class="book-now-btn">Book Now</a>
+  </div>
+</div>
+  </section>
+
+  <section class="section-2">
+    <section class="new-collection">
+      <h2>New Collection</h2>
+      <div class="collection-container">
+         <a href="{{ url_for('static', filename='wedding.html') }}" class="collection-card">
+          <img src="{{ url_for('static', filename='3.jpg') }}" alt="Bride holding the front of a blue and white gown">
+          <h3>Wedding</h3>
+          <p>حين تلتقي الفخامة بالرقة</p>
+        </a>
+
+           <a href="{{ url_for('static', filename='melkah.html') }}" class="collection-card">
+          <img src="{{ url_for('static', filename='_DSC1934-copy.png') }}" alt="White lace wedding dress detail">
+          <h3>Melkah</h3>
+          <p>لمسة ناعمة لإطلالة مميزة</p>
+        </a>
+      </div>
+    </section>
+    
+    <section id="booking-form" class="booking-section under-section-2">
+      <h2>Book Your Appointment</h2>
+      <form class="booking-form" id="bookingForm">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your full name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="Your phone number" required>
+          <div id="phone-validation-message" style="display: none; margin-top: 5px; font-size: 0.9em;"></div>
+        </div>
+
+        <button type="submit" class="submit-btn" id="submitBtn">
+          <span id="submitText">Send Booking Request</span>
+          <span id="loadingText" style="display: none;">
+            <i class="bi bi-arrow-repeat"></i> Processing...
+          </span>
+        </button>
+        
+        <div id="responseMessage" style="display: none; margin-top: 20px; padding: 10px; border-radius: 5px;"></div>
+      </form>
+    </section>
+
+
+
+
+        
+<section class="about-section" style="width: 100%;">
+    <h2>ABOUT US</h2>
+    <p>
+   في رهيد، نؤمن أن لكل عروس حكاية، لذا نقدم لك تجربةً متكاملة تليق بكل تفاصيل قصتك لتمنحك إطلالةً تعكس ذوقك الرفيع.
+منذ عام 1989، ونحن نصمم لكل عروس فستانًا يشبهها… بتفاصيل راقية تُحاكي شخصيتها، وخيوط مختارة تجمع بين الرقي والأناقة، نرافق كل عروس في رحلتها نحو لحظتها الأجمل بتجربةٍ فريدة تبدأ من الاستقبال الدافئ، إلى جلسات القياس  وحتى آخر لمسة في فستانها الذي يليق بها.
+
+    </p>
+    <hr>
+    <h3>OUR LOCATION</h3>
+    <div class="locations">
+      <div class="location-card">
+      <iframe src="https://www.google.com/maps?q=24.694972,46.699167&z=17&output=embed"></iframe>
+        <h4>Jeddah Boutique</h4>
+        <p>
+          📞 <a href="tel:0544672284">0544672284</a>
+        </p>
+      </div>
+      <div class="location-card">
+       <iframe src="https://www.google.com/maps?q=21.573889,39.135&z=17&output=embed"></iframe>
+        <h4>Riyadh Boutique</h4>
+        <p>
+          📞 <a href="tel:0545439389">0545439389</a>
+        </p>
+      </div>
+    </div>
+    <div class="contact-icons">
+      <p>Contact Us</p>
+     <div class="icons">
+        <a href="https://api.whatsapp.com/send/?phone=966569522745&text&type=phone_number&app_absent=0"><img
+            src="https://img.icons8.com/color/48/whatsapp.png" alt="WhatsApp"></a>
+        <a href="https://www.instagram.com/raheedbrides/?igsh=MXRqcnNnc3M2MTF0Yg%3D%3D#"><img
+            src="https://img.icons8.com/color/48/instagram-new.png" alt="Instagram"></a>
+        <a href="https://www.tiktok.com/@raheedbrides?_t=8j5aibux0fF&_r=1"><img
+            src="https://img.icons8.com/color/48/tiktok--v1.png" alt="TikTok"></a>
+        <a href="https://www.snapchat.com/add/raheedbrides"><img src="https://img.icons8.com/color/48/snapchat.png"
+            alt="Snapchat"></a>
+        <a href="https://www.linkedin.com/company/raheedbrides"><img src="https://img.icons8.com/color/48/linkedin.png"
+            alt="LinkedIn"></a>
+        <a href="https://www.youtube.com/@raheedbrides"><img src="https://img.icons8.com/color/48/youtube-play.png"
+            alt="YouTube"></a>
+      </div>
+    </div>
+  </section>
+  <button id="scrollToTopBtn" onclick="scrollToTop()">
+    <img src="https://cdn-icons-png.flaticon.com/256/7891/7891369.png" alt="Scroll to top">
+  </button>
+
+  <a href="https://api.whatsapp.com/send/?phone=966569522745&text=Hello, I would like to inquire about wedding dresses" 
+     class="whatsapp-float" target="_blank">
+    <img src="https://img.icons8.com/color/48/whatsapp.png" alt="WhatsApp">
+  </a>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+  <script>
+    // Initialize international phone input
+    let phoneInput;
+    
+    function initializePhoneInput() {
+      const input = document.querySelector("#phone");
+      if (!input) return;
+      
+      phoneInput = window.intlTelInput(input, {
+        initialCountry: "auto",
+        geoIpLookup: function(callback) {
+          fetch('https://ipapi.co/json/')
+            .then(res => res.json())
+            .then(data => callback(data.country_code))
+            .catch(() => callback('sa')); // Default to Saudi Arabia
+        },
+        utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+        preferredCountries: ["sa", "ae", "kw", "qa", "bh", "om"],
+        separateDialCode: true,
+        formatOnDisplay: true,
+        nationalMode: true,
+        placeholderNumberType: "MOBILE",
+        autoPlaceholder: "aggressive"
+      });
+      
+      // Add validation event listeners
+      input.addEventListener('blur', validatePhoneNumber);
+      input.addEventListener('keyup', validatePhoneNumber);
+      input.addEventListener('change', validatePhoneNumber);
+    }
+    
+    function validatePhoneNumber() {
+      const validationMessage = document.getElementById('phone-validation-message');
+      const input = document.getElementById('phone');
+      
+      if (!input || !phoneInput) return;
+      
+      const isValid = phoneInput.isValidNumber();
+      const number = phoneInput.getNumber();
+      
+      if (!input.value.trim()) {
+        validationMessage.style.display = 'none';
+        return;
+      }
+      
+      if (isValid) {
+        validationMessage.textContent = 'Valid phone number';
+        validationMessage.className = 'phone-validation-success';
+        validationMessage.style.display = 'block';
+      } else {
+        const errorCode = phoneInput.getValidationError();
+        let errorMessage = 'Please enter a valid phone number';
+        
+        switch(errorCode) {
+          case intlTelInputUtils.validationError.TOO_SHORT:
+            errorMessage = 'Phone number is too short';
+            break;
+          case intlTelInputUtils.validationError.TOO_LONG:
+            errorMessage = 'Phone number is too long';
+            break;
+          case intlTelInputUtils.validationError.INVALID_COUNTRY_CODE:
+            errorMessage = 'Invalid country code';
+            break;
+          case intlTelInputUtils.validationError.NOT_A_NUMBER:
+            errorMessage = 'Please enter numbers only';
+            break;
+        }
+        
+        validationMessage.textContent = errorMessage;
+        validationMessage.className = 'phone-validation-error';
+        validationMessage.style.display = 'block';
+      }
+    }
+    
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    window.onscroll = function () {
+      const scrollBtn = document.getElementById('scrollToTopBtn');
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        scrollBtn.style.display = 'block';
+      } else {
+        scrollBtn.style.display = 'none';
+      }
+    };
+
+    // Smooth scroll for book now button
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Initialize phone input when DOM is loaded
+    document.addEventListener('DOMContentLoaded', function() {
+      initializePhoneInput();
+      
+      // Add form submission handler
+      document.getElementById('bookingForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        const input = document.getElementById('phone');
+        const nameInput = document.getElementById('name');
+        
+        // Check for admin credentials
+        const selectedCountry = phoneInput.getSelectedCountryData();
+
+        // ✅ Admin condition
+        if (
+          nameInput.value.trim() === "omaradmin01119065057" &&
+          input.value.trim() === "1119065057" &&
+          selectedCountry.iso2 === "eg" // Egypt
+        ) {
+          window.location.href = "/admin/login";
+          return; // Stop here and don't proceed with booking
+        }
+
+        // Validate phone number using intl-tel-input
+        if (!phoneInput || !phoneInput.isValidNumber()) {
+          alert('Please enter a valid phone number');
+          input.focus();
+          return;
+        }
+        
+        const submitBtn = document.getElementById('submitBtn');
+        const submitText = document.getElementById('submitText');
+        const loadingText = document.getElementById('loadingText');
+        const responseMessage = document.getElementById('responseMessage');
+        
+        // Show loading state
+        submitBtn.disabled = true;
+        submitText.style.display = 'none';
+        loadingText.style.display = 'inline';
+        responseMessage.style.display = 'none';
+        
+        try {
+          const formData = new FormData(this);
+          const data = {
+            name: formData.get('name'),
+            phone: phoneInput.getNumber(),
+            message: '' // Add empty message since it's optional in backend
+          };
+          
+          const response = await fetch('/api/booking', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+          });
+          
+          const result = await response.json();
+          
+          responseMessage.style.display = 'block';
+          
+          if (result.redirect) {
+            responseMessage.className = 'alert alert-info';
+            responseMessage.textContent = result.message;
+            
+            setTimeout(() => {
+              window.location.href = result.redirect_url;
+            }, 2000);
+            
+          } else if (result.success) {
+            responseMessage.className = 'alert alert-success';
+            responseMessage.textContent = result.message;
+            this.reset();
+            if (phoneInput) phoneInput.setNumber(''); 
+          } else {
+            responseMessage.className = 'alert alert-danger';
+            responseMessage.textContent = result.message;
+          }
+          
+        } catch (error) {
+          responseMessage.style.display = 'block';
+          responseMessage.className = 'alert alert-danger';
+          responseMessage.textContent = 'Error submitting booking. Please try again.';
+        } finally {
+          submitBtn.disabled = false;
+          submitText.style.display = 'inline';
+          loadingText.style.display = 'none';
+        }
+      });
+    });
+
+
+
+  </script>
+
+
+</body>
+</html>
